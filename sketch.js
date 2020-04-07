@@ -48,23 +48,23 @@ let myFont;
 
 
 function preload() {
-  myFont = loadFont('Sweet.otf');
-  txtr.headR = loadImage('headR.png');
-  txtr.legR = loadImage('legR.png');
-  txtr.headL = loadImage('headL.png');
-  txtr.legL = loadImage('legL.png');
-  txtr.armL = loadImage('armL.png');
-  txtr.armR = loadImage('armR.png');
-  txtr.handL = loadImage('handL.png');
-  txtr.handR = loadImage('handR.png');
-  txtr.axL = loadImage('axL.png');
-  txtr.axR = loadImage('axR.png');
-  txtr.tree0 = loadImage('tree0.png');
-  txtr.tree1 = loadImage('tree1.png');
-  txtr.tip = loadImage('tip.png');
-  txtr.meat = loadImage('meat.png');
-  txtr.shop = loadImage('shop.png');
-  txtr.gear = loadImage('gear.png');
+  myFont = loadFont('assets/Sweet.otf');
+  txtr.headR = loadImage('assets/headR.png');
+  txtr.legR = loadImage('assets/legR.png');
+  txtr.headL = loadImage('assets/headL.png');
+  txtr.legL = loadImage('assets/legL.png');
+  txtr.armL = loadImage('assets/armL.png');
+  txtr.armR = loadImage('assets/armR.png');
+  txtr.handL = loadImage('assets/handL.png');
+  txtr.handR = loadImage('assets/handR.png');
+  txtr.axL = loadImage('assets/axL.png');
+  txtr.axR = loadImage('assets/axR.png');
+  txtr.tree0 = loadImage('assets/tree0.png');
+  txtr.tree1 = loadImage('assets/tree1.png');
+  txtr.tip = loadImage('assets/tip.png');
+  txtr.meat = loadImage('assets/meat.png');
+  txtr.shop = loadImage('assets/shop.png');
+  txtr.gear = loadImage('assets/gear.png');
 }
 
 function setup() {
