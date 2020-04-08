@@ -48,6 +48,14 @@ let myFont;
 
 
 function preload() {
+  //maybe later if i need to make sure files load before anything runs
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  noiseSeed(4474);
+  textFont(myFont);
+  pixelDensity(0.9);
   myFont = loadFont('/assets/Sweet.otf');
   txtr.headR = loadImage('/assets/headR.png');
   txtr.legR = loadImage('/assets/legR.png');
@@ -65,13 +73,6 @@ function preload() {
   txtr.meat = loadImage('/assets/meat.png');
   txtr.shop = loadImage('/assets/shop.png');
   txtr.gear = loadImage('/assets/gear.png');
-}
-
-function setup() {
-  createCanvas(windowWidth, windowHeight);
-  noiseSeed(4474);
-  textFont(myFont);
-  pixelDensity(0.9);
 }
 
 function windowResized() {
