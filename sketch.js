@@ -55,7 +55,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   noiseSeed(4474);
   pixelDensity(0.9);
-  myFont = loadFont('Sweet.otf');
+  myFont = loadFont('assets/Sweet.otf');
   txtr.headR = loadImage('assets/headR.png');
   txtr.legR = loadImage('assets/legR.png');
   txtr.headL = loadImage('assets/headL.png');
