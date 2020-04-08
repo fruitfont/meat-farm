@@ -55,7 +55,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   noiseSeed(4474);
   pixelDensity(0.9);
-  myFont = loadFont('assets/Sweet.otf');
+  myFont = loadFont('Sweet.otf');
   txtr.headR = loadImage('assets/headR.png');
   txtr.legR = loadImage('assets/legR.png');
   txtr.headL = loadImage('assets/headL.png');
@@ -453,7 +453,7 @@ function drawPaper() {
   rect(-width / 2, -height / 2, width, height);
   strokeWeight(4);
   stroke(212, 105, 78, 100);
-  for (let i = 0; i < width / 40; i++) {
+  for (let i = 0; i < height / 40; i++) {
     line(-width / 2, -height / 2 + 60 + i * 40, width / 2, -height / 2 + 60 + i * 40);
   }
   stroke(82, 169, 209, 100);
@@ -462,10 +462,10 @@ function drawPaper() {
 }
 
 function drawScene() {
-  p.nearestTree = floor((p.x + width / 2 + 150) / 300) * 300;
-  p.nearestNumb = ((p.x + width / 2 + 150) / 300) * 300;
+  p.nearestTree = floor((p.x + 150) / 300) * 300;
+  p.nearestNumb = ((p.x + 150) / 300) * 300;
   //tint(255, 200);
-  for (let i = floor(p.camX) - 110; i < floor(p.camX) + width + 110; i++) {
+  for (let i = floor(p.camX-width/2) - 110; i < floor(p.camX) + width/2 + 110; i++) {
     if (treesDead[i] == null) {
       treesDead[i] = 0;
       treesDeadEffect[i] = 0;
@@ -490,18 +490,18 @@ function drawScene() {
     if (i / 300 == floor(i / 300)) {
       if (noiseVal > 0.55) {
         if(treeTimes[i]!==null) {
-          text(10-floor(millis()/1000-treeTimes[i]/1000)+" seconds", i - p.camX, 50+treesDeadEffect[i] * -200 + height / 1.5 + p.camY);
+          text(10-floor(millis()/1000-treeTimes[i]/1000)+" seconds", i - p.camX+width/2, 50+treesDeadEffect[i] * -200 + height / 1.5 + p.camY);
         }
-        image(txtr.tree0, i - p.camX, treesDeadEffect[i] * 200 + height / 1.5 - 80 + p.camY- sin(millis()/100)*(treeSelect[i] * 3), txtr.tree0.width / 2, txtr.tree0.height / 2);
+        image(txtr.tree0, i - p.camX+width/2, treesDeadEffect[i] * 200 + height / 1.5 - 80 + p.camY- sin(millis()/100)*(treeSelect[i] * 3), txtr.tree0.width / 2, txtr.tree0.height / 2);
       } else {
         if (noiseVal < 0.45) {
           if(treeTimes[i]!==null) {
-          text(10-floor(millis()/1000-treeTimes[i]/1000)+" seconds", i - p.camX, 50+treesDeadEffect[i] * -200 + height / 1.5 + p.camY);
+          text(10-floor(millis()/1000-treeTimes[i]/1000)+" seconds", i - p.camX+width/2, 50+treesDeadEffect[i] * -200 + height / 1.5 + p.camY);
         }
-          image(txtr.tree1, i - p.camX, treesDeadEffect[i] * 200 + height / 1.5 - 80 + p.camY - sin(millis()/100)*(treeSelect[i] * 3), txtr.tree0.width / 2, txtr.tree0.height / 2);
+          image(txtr.tree1, i - p.camX+width/2, treesDeadEffect[i] * 200 + height / 1.5 - 80 + p.camY - sin(millis()/100)*(treeSelect[i] * 3), txtr.tree0.width / 2, txtr.tree0.height / 2);
         }else{
         if(noiseVal<0.5&&noiseVal>0.47) {
-          image(txtr.shop, i - p.camX, treesDeadEffect[i] * 200 + height / 1.5 - 80 + p.camY - treeSelect[i] + sin(millis() / 200) * (treeSelect[i] * 10), txtr.shop.width / 2, txtr.shop.height / 2);
+          image(txtr.shop, i - p.camX+width/2, treesDeadEffect[i] * 200 + height / 1.5 - 80 + p.camY - treeSelect[i] + sin(millis() / 200) * (treeSelect[i] * 10), txtr.shop.width / 2, txtr.shop.height / 2);
         }
         }
       }
@@ -511,9 +511,9 @@ function drawScene() {
   fill(0);
   for (let i = 0; i < meat.length; i++) {
     if (meat[i] !== null) {
-      image(txtr.meat, meat[i].x - p.camX, sin(millis()/200+meat[i].size)*5+-20 + height / 1.5 + meat[i].y + p.camY, txtr.meat.width/3+meat[i].size, txtr.meat.height/3+meat[i].size);
+      image(txtr.meat, meat[i].x - p.camX+width/2, sin(millis()/200+meat[i].size)*5+-20 + height / 1.5 + meat[i].y + p.camY, txtr.meat.width/3+meat[i].size, txtr.meat.height/3+meat[i].size);
       meat[i].y /= 1.2;
-      if (p.x + width / 2 - 10 < meat[i].x && p.x + width / 2 + 20 > meat[i].x&& p.y<30) {
+      if (p.x - 10 < meat[i].x && p.x + 20 > meat[i].x&& p.y<30) {
         p.meat += 1;
         meat[i] = null;
       }
