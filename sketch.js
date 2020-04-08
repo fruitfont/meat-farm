@@ -148,7 +148,7 @@ function mousePressed() {
   
   if(mouseY>140&&mouseY<190) {
     if(mouseIsPressed) {
-      pixelDensity(ceil(map(mouseX, 0, width, 0, 100))); 
+      pixelDensity(ceil(map(mouseX, 0, width, 0, 100))/100); 
     }
   }
   }
