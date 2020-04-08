@@ -54,25 +54,25 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noiseSeed(4474);
-  textFont(myFont);
   pixelDensity(0.9);
-  myFont = loadFont('/assets/Sweet.otf');
-  txtr.headR = loadImage('/assets/headR.png');
-  txtr.legR = loadImage('/assets/legR.png');
-  txtr.headL = loadImage('/assets/headL.png');
-  txtr.legL = loadImage('/assets/legL.png');
-  txtr.armL = loadImage('/assets/armL.png');
-  txtr.armR = loadImage('/assets/armR.png');
-  txtr.handL = loadImage('/assets/handL.png');
-  txtr.handR = loadImage('/assets/handR.png');
-  txtr.axL = loadImage('/assets/axL.png');
-  txtr.axR = loadImage('/assets/axR.png');
-  txtr.tree0 = loadImage('/assets/tree0.png');
-  txtr.tree1 = loadImage('/assets/tree1.png');
-  txtr.tip = loadImage('/assets/tip.png');
-  txtr.meat = loadImage('/assets/meat.png');
-  txtr.shop = loadImage('/assets/shop.png');
-  txtr.gear = loadImage('/assets/gear.png');
+  myFont = loadFont('assets/Sweet.otf');
+  txtr.headR = loadImage('assets/headR.png');
+  txtr.legR = loadImage('assets/legR.png');
+  txtr.headL = loadImage('assets/headL.png');
+  txtr.legL = loadImage('assets/legL.png');
+  txtr.armL = loadImage('assets/armL.png');
+  txtr.armR = loadImage('assets/armR.png');
+  txtr.handL = loadImage('assets/handL.png');
+  txtr.handR = loadImage('assets/handR.png');
+  txtr.axL = loadImage('assets/axL.png');
+  txtr.axR = loadImage('assets/axR.png');
+  txtr.tree0 = loadImage('assets/tree0.png');
+  txtr.tree1 = loadImage('assets/tree1.png');
+  txtr.tip = loadImage('assets/tip.png');
+  txtr.meat = loadImage('assets/meat.png');
+  txtr.shop = loadImage('assets/shop.png');
+  txtr.gear = loadImage('assets/gear.png');
+  textFont(myFont);
 }
 
 function windowResized() {
